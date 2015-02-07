@@ -217,9 +217,6 @@ namespace SharpNL.ML.Model {
             numEvents = eventsToCompare.Count;
             if (sort) {
                 eventsToCompare.Sort();
-                if (numEvents <= 1) {
-                    return numUniqueEvents;
-                }
 
                 var ce = eventsToCompare[0];
                 for (var i = 1; i < numEvents; i++) {
