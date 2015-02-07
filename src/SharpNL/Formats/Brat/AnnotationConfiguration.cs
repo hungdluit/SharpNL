@@ -30,6 +30,7 @@ namespace SharpNL.Formats.Brat {
         public const string SPAN_TYPE = "Span";
         public const string ENTITY_TYPE = "Entity";
         public const string RELATION_TYPE = "Relation";
+        public const string ATTRIBUTE_TYPE = "Attribute";
 
         private readonly Dictionary<string, string> mapping;
 
@@ -87,6 +88,9 @@ namespace SharpNL.Formats.Brat {
                         sectionType = line.TrimStart('[').TrimEnd(']');
                     } else {
                         switch (sectionType) {
+                            case "attributes":
+                                typeToClassMap.Add(line.Substring(0, line.IndexOf(" ", StringComparison.Ordinal)), ATTRIBUTE_TYPE);
+                                continue;
                             case "entities":
                                 typeToClassMap.Add(line, ENTITY_TYPE);
                                 continue;

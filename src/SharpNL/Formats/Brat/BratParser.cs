@@ -36,6 +36,9 @@ namespace SharpNL.Formats.Brat {
         public const int ARG1_OFFSET = 2;
         public const int ARG2_OFFSET = 3;
 
+        private const int ATTACHED_TO_OFFSET = 2;
+        private const int VALUE_OFFSET = 3;
+
         private static int ParseInt(string value) {
             int i;
             if (!int.TryParse(value, out i)) {
@@ -52,6 +55,26 @@ namespace SharpNL.Formats.Brat {
             }
 
             throw new InvalidFormatException("Failed to parse argument.");
+        }
+
+        public static BratAnnotation ParseAttributeAnnotation(Span[] tokens, string line) {
+            if (tokens.Length == 4) {
+                return new AttributeAnnotation(
+                    tokens[ID_OFFSET].GetCoveredText(line),
+                    tokens[TYPE_OFFSET].GetCoveredText(line),
+                    tokens[ATTACHED_TO_OFFSET].GetCoveredText(line),
+                    tokens[VALUE_OFFSET].GetCoveredText(line));
+            }
+
+            if (tokens.Length == 3) {
+                return new AttributeAnnotation(
+                    tokens[ID_OFFSET].GetCoveredText(line),
+                    tokens[TYPE_OFFSET].GetCoveredText(line),
+                    tokens[ATTACHED_TO_OFFSET].GetCoveredText(line),
+                    null);
+            }
+
+            throw new InvalidFormatException("BratAttributeAnnotation: Line must have 3 or 4 fields");
         }
 
         public static BratAnnotation ParseSpanAnnotation(Span[] tokens, string line) {

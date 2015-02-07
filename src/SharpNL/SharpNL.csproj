@@ -47,6 +47,7 @@
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\StringBuilderExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Formats\Brat\AttributeAnnotation.cs" />
     <Compile Include="Inflecter\IInfleter.cs" />
     <Compile Include="Inflecter\Inflector.cs" />
     <Compile Include="Inflecter\Lang\en\Inflecter.cs" />

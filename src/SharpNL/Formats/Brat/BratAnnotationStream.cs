@@ -75,7 +75,7 @@ namespace SharpNL.Formats.Brat {
                 var tokens = WhitespaceTokenizer.Instance.TokenizePos(line);
 
                 if (tokens.Length > 2) {
-                    string type = config[tokens[BratParser.TYPE_OFFSET].GetCoveredText(line)];
+                    var type = config[tokens[BratParser.TYPE_OFFSET].GetCoveredText(line)];
 
                     BratParse parse;
 
@@ -87,10 +87,13 @@ namespace SharpNL.Formats.Brat {
                         case AnnotationConfiguration.RELATION_TYPE:
                             parse = BratParser.ParseRelationAnnotation;
                             break;
+                        case AnnotationConfiguration.ATTRIBUTE_TYPE:
+                            parse = BratParser.ParseAttributeAnnotation;
+                            break;
                         default:
                             throw new InvalidDataException(
                                 "Failed to parse ann document with id " + id +
-                                " type class, no parser registered: " + tokens[BratParser.TYPE_OFFSET]);
+                                " type class, no parser registered: " + tokens[BratParser.TYPE_OFFSET].GetCoveredText(line));
                     }
                     return parse(tokens, line);
                 }
