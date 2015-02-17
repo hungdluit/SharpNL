@@ -27,7 +27,7 @@ namespace SharpNL.Text {
     /// <summary>
     /// Represents a generic entity.
     /// </summary>
-    public class Entity : IEntity {
+    public class Entity : BaseObject, IEntity {
 
         #region + Constructors .
 

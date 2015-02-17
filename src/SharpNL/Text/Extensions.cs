@@ -26,7 +26,7 @@ using SharpNL.Stemmer;
 
 namespace SharpNL.Text {
     /// <summary>
-    /// Provides extensions methods for the SharpNL.Text namespace.
+    /// Provides extensions methods for the <c>SharpNL.Text</c> namespace.
     /// </summary>
     public static class Extensions {
 

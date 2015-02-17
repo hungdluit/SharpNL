@@ -69,6 +69,7 @@
     <Compile Include="Stemmer\RSLP\RSLPStep.cs" />
     <Compile Include="Stemmer\Stem.cs" />
     <Compile Include="Stemmer\Suffixes.cs" />
+    <Compile Include="Text\BaseObject.cs" />
     <Compile Include="Text\Category.cs" />
     <Compile Include="Text\Extensions.cs" />
     <Compile Include="Text\ICategory.cs" />

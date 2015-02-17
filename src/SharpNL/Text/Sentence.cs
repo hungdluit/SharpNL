@@ -31,7 +31,7 @@ namespace SharpNL.Text {
     /// Represents a sentence.
     /// </summary>
     [TypeConverter(typeof(ExpandableObjectConverter))]
-    public class Sentence : ISentence {
+    public class Sentence : BaseObject, ISentence {
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Sentence"/> class.

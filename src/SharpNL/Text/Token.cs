@@ -32,7 +32,7 @@ namespace SharpNL.Text {
     /// position of it in the sentence.
     /// </summary>
     [TypeConverter(typeof(ExpandableObjectConverter))]
-    public class Token : IToken {
+    public class Token : BaseObject, IToken {
 
         #region + Constructors .
         /// <summary>

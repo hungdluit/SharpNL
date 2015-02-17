@@ -24,7 +24,7 @@ namespace SharpNL.Text {
     /// <summary>
     /// Represents a category.
     /// </summary>
-    public class Category : ICategory {
+    public class Category : BaseObject, ICategory {
 
         /// <summary>
         /// Gets or sets the category name.

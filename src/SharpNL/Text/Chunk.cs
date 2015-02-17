@@ -30,7 +30,7 @@ namespace SharpNL.Text {
     /// Represents a chunk.
     /// </summary>
     [TypeConverter(typeof(ExpandableObjectConverter))]
-    public class Chunk : IChunk {
+    public class Chunk : BaseObject, IChunk {
 
         private readonly Sentence sentence;
 

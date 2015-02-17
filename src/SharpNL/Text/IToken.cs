@@ -20,8 +20,6 @@
 //   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 //  
 
-using System;
-
 namespace SharpNL.Text {
     /// <summary>
     /// Represents a token.

@@ -30,7 +30,7 @@ namespace SharpNL.Text {
     /// Represents a document with its texts and sentences.
     /// </summary>
     [TypeConverter(typeof(ExpandableObjectConverter))]
-    public class Document : IDocument {
+    public class Document : BaseObject, IDocument {
 
         #region + Constructors .
 
