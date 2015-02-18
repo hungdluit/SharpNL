@@ -24,9 +24,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
-using SharpNL.Java;
 using SharpNL.Text;
 using SharpNL.Utility;
+using StringTokenizer = SharpNL.Java.StringTokenizer;
 
 namespace SharpNL.Parser {
     /// <summary>

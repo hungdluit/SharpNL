@@ -23,8 +23,8 @@
 using System;
 using System.IO;
 using System.Text;
-using SharpNL.Java;
 using SharpNL.Utility;
+using StringTokenizer = SharpNL.Java.StringTokenizer;
 
 namespace SharpNL.ML.Model {
     /// <summary>

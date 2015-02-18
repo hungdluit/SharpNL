@@ -22,9 +22,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using SharpNL.Java;
 using SharpNL.POSTag;
 using SharpNL.Utility;
+using StringTokenizer = SharpNL.Java.StringTokenizer;
 
 namespace SharpNL.Formats.Ad {
     /// <summary>

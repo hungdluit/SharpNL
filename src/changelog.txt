@@ -19,3 +19,7 @@ Release 1.0 (2014-12-06)
 
 2014-12-10 Knuppe
  * Lemmatization support added
+
+2015-02-17 Knuppe
+ * The text objects now can store data in a dictionary.
+ * Utility.StringTokenizer added

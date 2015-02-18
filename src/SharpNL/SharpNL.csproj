@@ -73,6 +73,8 @@
     <Compile Include="Text\Category.cs" />
     <Compile Include="Text\Extensions.cs" />
     <Compile Include="Text\ICategory.cs" />
+    <Compile Include="Utility\StringTokenizer.cs" />
+    <Compile Include="Utility\StringToken.cs" />
     <Compile Include="Tokenize\TokenizerAnalyzer.cs" />
     <Compile Include="Analyzer\AbstractAnalyzer.cs" />
     <Compile Include="Analyzer\AggregateAnalyzer.cs" />
@@ -195,6 +197,7 @@
     <Compile Include="Stemmer\Snowball\SpanishStemmer.cs" />
     <Compile Include="Stemmer\Snowball\SwedishStemmer.cs" />
     <Compile Include="Text\ITextFactory.cs" />
+    <Compile Include="Utility\StringTokenKind.cs" />
     <Compile Include="Utility\CacheBase.cs" />
     <Compile Include="Utility\ModelManager.cs" />
     <Compile Include="Utility\Model\ModelInfo.cs" />
