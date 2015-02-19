@@ -509,7 +509,7 @@ namespace SharpNL.Inflecter.Lang.en {
         /// </summary>
         /// <param name="word">The word to pluralize.</param>
         /// <param name="pos">The part-of-speec tag.</param>
-        /// <returns>The plurilized word.</returns>
+        /// <returns>The pluralized word.</returns>
         public virtual string Pluralize(string word, string pos) {
             if (string.IsNullOrWhiteSpace(word))
                 return word;

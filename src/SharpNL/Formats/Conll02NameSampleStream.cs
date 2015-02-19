@@ -52,6 +52,15 @@ namespace SharpNL.Formats {
 
         #region + Constructors .
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CoNLL02NameSampleStream"/> class.
+        /// </summary>
+        /// <param name="language">The supported conll language.</param>
+        /// <param name="lineStream">The line stream.</param>
+        /// <param name="types">The conll types.</param>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="language"/></exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="lineStream"/></exception>
+        /// <exception cref="System.ArgumentException">The specified language is not supported.</exception>
         public CoNLL02NameSampleStream(Language language, IObjectStream<string> lineStream, Types types) {
             if (!Enum.IsDefined(typeof(Language), language))
                 throw new ArgumentOutOfRangeException("language");
@@ -67,6 +76,18 @@ namespace SharpNL.Formats {
             this.types = types;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CoNLL02NameSampleStream"/> class.
+        /// </summary>
+        /// <param name="language">The supported conll language.</param>
+        /// <param name="inputStream">The input stream.</param>
+        /// <param name="types">The conll types.</param>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// <paramref name="language"/>
+        /// or
+        /// <paramref name="types"/>
+        /// </exception>
+        /// <exception cref="System.ArgumentNullException">inputStream</exception>
         public CoNLL02NameSampleStream(Language language, Stream inputStream, Types types) {
             if (!Enum.IsDefined(typeof(Language), language))
                 throw new ArgumentOutOfRangeException("language");
@@ -82,6 +103,14 @@ namespace SharpNL.Formats {
             this.types = types;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CoNLL02NameSampleStream"/> class.
+        /// </summary>
+        /// <param name="language">The supported conll language.</param>
+        /// <param name="streamFactory">The stream factory.</param>
+        /// <param name="types">The conll types.</param>
+        /// <exception cref="System.ArgumentOutOfRangeException">language</exception>
+        /// <exception cref="System.ArgumentNullException">streamFactory</exception>
         public CoNLL02NameSampleStream(Language language, IInputStreamFactory streamFactory, Types types) {
             if (!Enum.IsDefined(typeof(Language), language))
                 throw new ArgumentOutOfRangeException("language");

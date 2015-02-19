@@ -21,13 +21,33 @@
 //  
 
 namespace SharpNL.Formats.Brat {
+    /// <summary>
+    /// Represents a Brat relation annotation.
+    /// </summary>
     public class RelationAnnotation : BratAnnotation {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RelationAnnotation"/> class.
+        /// </summary>
+        /// <param name="id">The relation identifier.</param>
+        /// <param name="type">The relation type.</param>
+        /// <param name="arg1">The arg1.</param>
+        /// <param name="arg2">The arg2.</param>
         public RelationAnnotation(string id, string type, string arg1, string arg2) : base(id, type) {
             Arg1 = arg1;
             Arg2 = arg2;
         }
 
+        /// <summary>
+        /// Gets the arg1.
+        /// </summary>
+        /// <value>The arg1.</value>
         public string Arg1 { get; private set; }
+
+        /// <summary>
+        /// Gets the arg2.
+        /// </summary>
+        /// <value>The arg2.</value>
         public string Arg2 { get; private set; }
 
         /// <summary>

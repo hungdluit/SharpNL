@@ -26,14 +26,21 @@ using System.IO;
 using System.Text;
 
 namespace SharpNL.Formats.Brat {
+    /// <summary>
+    /// Represents a Brat annotation configuration.
+    /// </summary>
     public class AnnotationConfiguration {
-        public const string SPAN_TYPE = "Span";
-        public const string ENTITY_TYPE = "Entity";
-        public const string RELATION_TYPE = "Relation";
-        public const string ATTRIBUTE_TYPE = "Attribute";
+        internal const string SPAN_TYPE = "Span";
+        internal const string ENTITY_TYPE = "Entity";
+        internal const string RELATION_TYPE = "Relation";
+        internal const string ATTRIBUTE_TYPE = "Attribute";
 
         private readonly Dictionary<string, string> mapping;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationConfiguration"/> class.
+        /// </summary>
+        /// <param name="mapping">The configuration mapping.</param>
         public AnnotationConfiguration(Dictionary<string, string> mapping) {
             this.mapping = mapping;
         }
@@ -69,6 +76,11 @@ namespace SharpNL.Formats.Brat {
 
         #region . Parse .
 
+        /// <summary>
+        /// Parses the specified input stream into a <seealso cref="AnnotationConfiguration"/> object.
+        /// </summary>
+        /// <param name="inputStream">The input stream.</param>
+        /// <returns>The parsed AnnotationConfiguration.</returns>
         public static AnnotationConfiguration Parse(Stream inputStream) {
             var typeToClassMap = new Dictionary<string, string>();
 

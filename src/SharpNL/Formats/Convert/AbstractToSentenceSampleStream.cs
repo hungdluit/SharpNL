@@ -27,10 +27,22 @@ using SharpNL.Tokenize;
 using SharpNL.Utility;
 
 namespace SharpNL.Formats.Convert {
+    /// <summary>
+    /// Represents a abstract sentence sample stream converter.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class AbstractToSentenceSampleStream<T> : FilterObjectStream<T, SentenceSample> where T : class {
         private readonly int chunkSize;
         private readonly IDetokenizer detokenizer;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AbstractToSentenceSampleStream{T}"/> class.
+        /// </summary>
+        /// <param name="detokenizer">The detokenizer.</param>
+        /// <param name="samples">The samples.</param>
+        /// <param name="chunkSize">Size of the chunk.</param>
+        /// <exception cref="System.ArgumentNullException">detokenizer</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">chunkSize;@chunkSize must be zero or larger</exception>
         protected AbstractToSentenceSampleStream(IDetokenizer detokenizer, IObjectStream<T> samples, int chunkSize)
             : base(samples) {
             if (detokenizer == null)
@@ -43,8 +55,19 @@ namespace SharpNL.Formats.Convert {
             this.chunkSize = chunkSize > 0 ? chunkSize : int.MaxValue;
         }
 
+        /// <summary>
+        /// Converts to the sentence.
+        /// </summary>
+        /// <param name="sample">The sample.</param>
+        /// <returns>The converted sentence.</returns>
         protected abstract string[] ToSentence(T sample);
 
+        /// <summary>
+        /// Returns the next <see cref="SentenceSample"/>. 
+        /// Calling this method repeatedly until it returns, <c>null</c> will return each <see cref="SentenceSample"/>
+        /// from the underlying source exactly once.
+        /// </summary>
+        /// <returns>The next <see cref="SentenceSample"/> or <c>null</c> to signal that the stream is exhausted.</returns>
         public override SentenceSample Read() {
             var sentences = new List<string[]>();
 

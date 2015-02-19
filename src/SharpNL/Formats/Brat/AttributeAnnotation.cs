@@ -20,7 +20,18 @@
 //   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 //  
 namespace SharpNL.Formats.Brat {
+    /// <summary>
+    /// Represents a Brat attribute annotation.
+    /// </summary>
     public class AttributeAnnotation : BratAnnotation {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AttributeAnnotation"/> class.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="type">The attribute type.</param>
+        /// <param name="attachedTo">The attached to.</param>
+        /// <param name="value">The attribute value.</param>
         public AttributeAnnotation(string id, string type, string attachedTo, string value)
             : base(id, type) {
 
@@ -31,10 +42,18 @@ namespace SharpNL.Formats.Brat {
         #region + Properties .
 
         #region . AttachedTo .
+        /// <summary>
+        /// Gets the attached to.
+        /// </summary>
+        /// <value>The attached to.</value>
         public string AttachedTo { get; private set; }
         #endregion
 
         #region . Value .
+        /// <summary>
+        /// Gets the attribute value.
+        /// </summary>
+        /// <value>The attribute value.</value>
         public string Value { get; private set; }
         #endregion
 

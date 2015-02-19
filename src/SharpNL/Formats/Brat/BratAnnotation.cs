@@ -28,6 +28,11 @@ namespace SharpNL.Formats.Brat {
 
         #region . Constructor .
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BratAnnotation"/> class.
+        /// </summary>
+        /// <param name="id">The annotation identifier.</param>
+        /// <param name="type">The annotation type.</param>
         protected BratAnnotation(string id, string type) {
             Id = id;
             Type = type;

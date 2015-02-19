@@ -124,6 +124,23 @@ namespace SharpNL.NameFind {
             
         }
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TokenNameFinderModel"/> class.
+        /// </summary>
+        /// <param name="languageCode">The language code.</param>
+        /// <param name="nameFinderModel">The name finder model.</param>
+        /// <param name="resources">The resources.</param>
+        /// <param name="manifestInfoEntries">The manifest information entries.</param>
+        public TokenNameFinderModel(
+            string languageCode,
+            IMaxentModel nameFinderModel,
+            Dictionary<string, object> resources,
+            Dictionary<string, string> manifestInfoEntries
+            ) : this(languageCode, nameFinderModel, null, resources, manifestInfoEntries) {
+            
+        }
+
         #endregion
 
         #region + Properties .

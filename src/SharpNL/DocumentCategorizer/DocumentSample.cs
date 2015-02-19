@@ -31,21 +31,27 @@ namespace SharpNL.DocumentCategorizer {
     /// Class which holds a classified document and its category.
     /// </summary>
     public class DocumentSample : IEquatable<DocumentSample> {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentSample"/> class.
+        /// </summary>
+        /// <param name="category">The document category.</param>
+        /// <param name="text">The document text.</param>
         public DocumentSample(string category, string text)
             : this(category, WhitespaceTokenizer.Instance.Tokenize(text)) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSample"/> class.
         /// </summary>
-        /// <param name="category">The category.</param>
-        /// <param name="text">The text.</param>
+        /// <param name="category">The document category.</param>
+        /// <param name="text">The document sentences.</param>
         public DocumentSample(string category, string[] text) : this(category, text, null) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentSample"/> class.
         /// </summary>
-        /// <param name="category">The category.</param>
-        /// <param name="text">The text.</param>
+        /// <param name="category">The document category.</param>
+        /// <param name="text">The document sentences.</param>
         /// <param name="extraInformation">The extra information.</param>
         /// <exception cref="System.ArgumentNullException">
         /// <paramref name="category"/>

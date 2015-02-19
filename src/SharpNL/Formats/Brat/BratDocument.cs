@@ -34,6 +34,13 @@ namespace SharpNL.Formats.Brat {
         private readonly ReadOnlyDictionary<string, BratAnnotation> annotationMap;
 
         #region . Constructor .
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BratDocument"/> class.
+        /// </summary>
+        /// <param name="config">The annotation configuration.</param>
+        /// <param name="id">The document identifier.</param>
+        /// <param name="text">The document text.</param>
+        /// <param name="annotations">The annotations.</param>
         public BratDocument(AnnotationConfiguration config, string id, string text, IEnumerable<BratAnnotation> annotations) {
 
             Config = config;

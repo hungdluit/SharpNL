@@ -32,9 +32,25 @@ namespace SharpNL.Formats {
         /// Enumerates the supported languages for CoNLL
         /// </summary>
         public enum Language {
+
+            /// <summary>
+            /// The German language
+            /// </summary>
             De,
+
+            /// <summary>
+            /// The English language
+            /// </summary>
             En,
+
+            /// <summary>
+            /// The Spanish language
+            /// </summary>
             Es,
+
+            /// <summary>
+            /// The Dutch language.
+            /// </summary>
             Nl
         }
 
@@ -43,9 +59,24 @@ namespace SharpNL.Formats {
         /// </summary>
         [Flags]
         public enum Types {
+            /// <summary>
+            /// The person entities
+            /// </summary>
             PersonEntities = 1 << 0,
+
+            /// <summary>
+            /// The organization entities
+            /// </summary>
             OrganizationEntities = 1 << 1,
+
+            /// <summary>
+            /// The location entities
+            /// </summary>
             LocationEntities = 1 << 2,
+
+            /// <summary>
+            /// The misc entities
+            /// </summary>
             MiscEntities = 1 << 3
         }
 

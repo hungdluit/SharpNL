@@ -140,7 +140,7 @@ namespace SharpNL.NameFind {
         /// <summary>
         /// Generates name tags for the given sequence, returning token spans for any identified names.
         /// </summary>
-        /// <param name="text">The text to be analized, typically a sentence.</param>
+        /// <param name="text">The text to be analyzed, typically a sentence.</param>
         /// <returns>An array of spans for each of the names identified.</returns>
         public Span[] Find(string text) {
             var spans = new List<Span>();

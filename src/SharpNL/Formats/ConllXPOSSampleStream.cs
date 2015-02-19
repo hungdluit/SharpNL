@@ -37,10 +37,19 @@ namespace SharpNL.Formats {
     /// <see href="http://www.cnts.ua.ac.be/conll2006/" />
     /// </remarks>
     public class CoNLLXPOSSampleStream : FilterObjectStream<string, POSSample> {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CoNLLXPOSSampleStream"/> class.
+        /// </summary>
+        /// <param name="samples">The sample stream.</param>
         public CoNLLXPOSSampleStream(IObjectStream<string> samples) : base(new ParagraphStream(samples)) {
             
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CoNLLXPOSSampleStream"/> class.
+        /// </summary>
+        /// <param name="streamFactory">The stream factory.</param>
+        /// <param name="encoding">The text encoding.</param>
         public CoNLLXPOSSampleStream(IInputStreamFactory streamFactory, Encoding encoding)
             : base(new ParagraphStream(new PlainTextByLineStream(streamFactory, encoding))) {
             

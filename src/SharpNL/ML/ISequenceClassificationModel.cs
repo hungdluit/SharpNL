@@ -1,8 +1,32 @@
-﻿using SharpNL.Utility;
-using SharpNL.Utility.Model;
-using SharpNL.Utility.Serialization;
+﻿// 
+//  Copyright 2014 Gustavo J Knuppe (https://github.com/knuppe)
+// 
+//   Licensed under the Apache License, Version 2.0 (the "License");
+//   you may not use this file except in compliance with the License.
+//   You may obtain a copy of the License at
+// 
+//       http://www.apache.org/licenses/LICENSE-2.0
+// 
+//   Unless required by applicable law or agreed to in writing, software
+//   distributed under the License is distributed on an "AS IS" BASIS,
+//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//   See the License for the specific language governing permissions and
+//   limitations under the License.
+// 
+//   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//   - May you do good and not evil.                                         -
+//   - May you find forgiveness for yourself and forgive others.             -
+//   - May you share freely, never taking more than you give.                -
+//   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  
+
+using SharpNL.Utility;
 
 namespace SharpNL.ML {
+    /// <summary>
+    /// The interface for sequence classification models.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface ISequenceClassificationModel<T> {
 
         /// <summary>
@@ -14,11 +38,10 @@ namespace SharpNL.ML {
         /// <param name="validator"></param>
         /// <returns></returns>
         Sequence BestSequence(
-            T[] sequence, 
-            object[] additionalContext, 
+            T[] sequence,
+            object[] additionalContext,
             IBeamSearchContextGenerator<T> beamSearch,
             ISequenceValidator<T> validator);
-
 
 
         /// <summary>
@@ -31,11 +54,11 @@ namespace SharpNL.ML {
         /// <param name="beamSearch">The beam search.</param>
         /// <param name="validator">The validator.</param>
         Sequence[] BestSequences(
-            int numSequences, 
-            T[] sequence, 
-            object[] additionalContext, 
+            int numSequences,
+            T[] sequence,
+            object[] additionalContext,
             double minSequenceScore,
-            IBeamSearchContextGenerator<T> beamSearch, 
+            IBeamSearchContextGenerator<T> beamSearch,
             ISequenceValidator<T> validator);
 
 
@@ -48,10 +71,10 @@ namespace SharpNL.ML {
         /// <param name="beamSearch">The beam search.</param>
         /// <param name="validator">The validator.</param>
         Sequence[] BestSequences(
-            int numSequences, 
+            int numSequences,
             T[] sequence,
             object[] additionalContext,
-            IBeamSearchContextGenerator<T> beamSearch, 
+            IBeamSearchContextGenerator<T> beamSearch,
             ISequenceValidator<T> validator);
 
 
@@ -60,6 +83,5 @@ namespace SharpNL.ML {
         /// </summary>
         /// <returns>all possible outcomes.</returns>
         string[] GetOutcomes();
-
     }
 }

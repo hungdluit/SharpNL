@@ -23,14 +23,25 @@
 using SharpNL.Utility;
 
 namespace SharpNL.Formats.Brat {
+    /// <summary>
+    /// Represents a Brat span annotation.
+    /// </summary>
     public class SpanAnnotation : BratAnnotation {
         internal SpanAnnotation(string id, string type, Span span, string coveredText) : base(id, type) {
             Span = span;
             CoveredText = coveredText;
         }
 
+        /// <summary>
+        /// Gets the span.
+        /// </summary>
+        /// <value>The span.</value>
         public Span Span { get; private set; }
 
+        /// <summary>
+        /// Gets the covered text.
+        /// </summary>
+        /// <value>The covered text.</value>
         public string CoveredText { get; private set; }
 
         /// <summary>

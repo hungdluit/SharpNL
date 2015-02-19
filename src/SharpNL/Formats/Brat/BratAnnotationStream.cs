@@ -27,6 +27,9 @@ using SharpNL.Tokenize;
 using SharpNL.Utility;
 
 namespace SharpNL.Formats.Brat {
+    /// <summary>
+    /// Represents a Brat annotation stream.
+    /// </summary>
     public class BratAnnotationStream : IObjectStream<BratAnnotation> {
 
         private readonly AnnotationConfiguration config;
@@ -34,8 +37,14 @@ namespace SharpNL.Formats.Brat {
         private readonly Stream input;
         private readonly long start;
         private readonly string id;
-        
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BratAnnotationStream"/> class.
+        /// </summary>
+        /// <param name="config">The annotation configuration.</param>
+        /// <param name="id">The stream identifier.</param>
+        /// <param name="inputStream">The input stream.</param>
         public BratAnnotationStream(AnnotationConfiguration config, string id, Stream inputStream) {
 
             this.config = config;

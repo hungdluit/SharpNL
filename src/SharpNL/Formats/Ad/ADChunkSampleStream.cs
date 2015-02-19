@@ -34,7 +34,14 @@ namespace SharpNL.Formats.Ad {
     public class AdChunkSampleStream : IObjectStream<ChunkSample> {
         private const string Other = "O";
 
+        /// <summary>
+        /// The Ad sentence stream.
+        /// </summary>
         protected readonly IObjectStream<AdSentence> adSentenceStream;
+
+        /// <summary>
+        /// The evaluation monitor.
+        /// </summary>
         protected readonly Monitor monitor;
 
         #region + Constructors .
